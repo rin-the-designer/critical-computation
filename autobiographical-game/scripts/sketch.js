@@ -1,6 +1,6 @@
 function preload() {
-  fontRegular = loadFont('/assets/fonts/Silkscreen-Regular.ttf');
-  fontBold = loadFont('/assets/fonts/Silkscreen-Bold.ttf');
+  fontRegular = loadFont('./assets/fonts/Silkscreen-Regular.ttf');
+  fontBold = loadFont('./assets/fonts/Silkscreen-Bold.ttf');
   loadSceneIntro();
   loadSceneUK();
   loadSceneZA();

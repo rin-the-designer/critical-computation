@@ -18,8 +18,8 @@ function setupUK() {
 
 function loadSceneUK() {
   // Original image, Big Ben, London by Marcin Nowak, https://unsplash.com/photos/big-ben-london-iXqTqC-f6jI.
-  london = loadImage('/assets/images/london.png');
-  playerUKimg = loadImage('/assets/images/playerUK.png');
+  london = loadImage('./assets/images/london.png');
+  playerUKimg = loadImage('./assets/images/playerUK.png');
 }
 
 function sceneUK() {

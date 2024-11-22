@@ -14,8 +14,8 @@ let storyPhaseUS = 0;
 let victoryUS = false;
 
 function loadSceneUS() {
-  obstacle1 = loadImage('/assets/images/rat1.png');
-  playerUSimg = loadImage('/assets/images/playerUS.png');
+  obstacle1 = loadImage('./assets/images/rat1.png');
+  playerUSimg = loadImage('./assets/images/playerUS.png');
 }
 
 function setupUS() {

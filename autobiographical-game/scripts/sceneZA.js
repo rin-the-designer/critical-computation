@@ -11,9 +11,9 @@ let storyPhaseZA = 0;
 let victoryZA = false;
 
 function loadSceneZA() {
-  //baboonImg = loadImage('/assets/images/baboon.png');
-  capetown = loadImage('/assets/images/capetown.png');
-  playerZAimg = loadImage('/assets/images/playerZA.png');
+  //baboonImg = loadImage('./assets/images/baboon.png');
+  capetown = loadImage('./assets/images/capetown.png');
+  playerZAimg = loadImage('./assets/images/playerZA.png');
 }
 
 function setupZA() {

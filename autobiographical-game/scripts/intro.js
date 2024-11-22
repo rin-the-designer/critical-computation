@@ -10,7 +10,7 @@ let menuItems = [
 ];
 
 function loadSceneIntro() {
-  rin = loadImage('/assets/images/rin.png');
+  rin = loadImage('./assets/images/rin.png');
 }
 
 function intro() {

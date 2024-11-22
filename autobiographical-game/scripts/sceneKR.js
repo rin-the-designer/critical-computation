@@ -16,10 +16,10 @@ let dustOpacity = 100;
 
 function loadsceneKR() {
   // Original image, Seoul Gwanghwamun Gate by Felix Fuchs, https://unsplash.com/photos/cars-and-people-near-building-during-day-fEyw6zOKGSo.
-  seoul = loadImage('/assets/images/seoul.png');
-  playerKRimg1 = loadImage('/assets/images/playerKR-1.png');
-  playerKRimg2 = loadImage('/assets/images/playerKR-2.png');
-  heartImg = loadImage('/assets/images/heart.png');
+  seoul = loadImage('./assets/images/seoul.png');
+  playerKRimg1 = loadImage('./assets/images/playerKR-1.png');
+  playerKRimg2 = loadImage('./assets/images/playerKR-2.png');
+  heartImg = loadImage('./assets/images/heart.png');
 }
 
 function setupKR() {
