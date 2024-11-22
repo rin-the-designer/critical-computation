@@ -1,0 +1,151 @@
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+
+  --bg-color: #ffffff;
+  --text-main: #181818;
+  --point-color: #ff8800;
+}
+
+::selection {
+  background-color: var(--point-color);
+  color: var(--text-main);
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('path/to/Inter.var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-feature-values InterVariable {
+  @character-variant {
+      cv01: 1; cv02: 2; cv03: 3; cv04: 4; cv05: 5; cv06: 6; cv07: 7; cv08: 8;
+      cv09: 9; cv10: 10; cv11: 11; cv12: 12; cv13: 13;
+      alt-1:            1; /* Alternate one */
+      alt-3:            9; /* Flat-top three */
+      open-4:           2; /* Open four */
+      open-6:           3; /* Open six */
+      open-9:           4; /* Open nine */
+      lc-l-with-tail:   5; /* Lower-case L with tail */
+      simplified-u:     6; /* Simplified u */
+      alt-double-s:     7; /* Alternate German double s */
+      uc-i-with-serif:  8; /* Upper-case i with serif */
+      uc-g-with-spur:  10; /* Capital G with spur */
+      single-story-a:  11; /* Single-story a */
+      compact-lc-f:    12; /* Compact f */
+      compact-lc-t:    13; /* Compact t */
+  }
+  @styleset {
+      ss01: 1; ss02: 2; ss03: 3; ss04: 4; ss05: 5; ss06: 6; ss07: 7; ss08: 8;
+      open-digits: 1;                /* Open digits */
+      disambiguation: 2;             /* Disambiguation (with zero) */
+      disambiguation-except-zero: 4; /* Disambiguation (no zero) */
+      round-quotes-and-commas: 3;    /* Round quotes &amp; commas */
+      square-punctuation: 7;         /* Square punctuation */
+      square-quotes: 8;              /* Square quotes */
+      circled-characters: 5;         /* Circled characters */
+      squared-characters: 6;         /* Squared characters */
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  line-height: 1.2em;
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.title-area {
+  font-size: calc(100vw / 16);
+}
+
+.tag {
+  display: inline-block;
+  border: none;
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  line-height: 1.5em;
+  padding: 0.25rem 0.8rem;
+  border-radius: 6px;
+  background: #ececec;
+}
+
+.tag:hover {
+  transform: translateX(2px);
+}
+
+#name-tag {
+  background: var(--point-color);
+}
+
+@media (max-width: 768px) {
+  .title-area {
+    font-size: 2rem;
+  }
+}
+
+.accordion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: 400;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: left;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: var(--text-main);
+  outline: none;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  .accordion {
+    font-size: 1rem;
+  }
+}
+
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.active {
+  background-color: var(--point-color);
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: var(--bg-color);
+  display: none;
+  overflow: hidden;
+  border-bottom: 2px solid var(--text-main);
+}
+
+.special-character {
+  font-family: 'Inter';
+  font-feature-settings: "ss06" 1, "calt" 1, "dlig" 1;
+  font-display: swap;
+  display: inline-block;
+  transition: transform 100ms ease-in;
+}
+
+.accordion.active .special-character {
+  transform: rotate(90deg);
+}

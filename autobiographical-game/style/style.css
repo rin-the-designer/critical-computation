@@ -1,0 +1,30 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+  
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+}
+
+#connectBtn {
+    background-color: #181818;
+    color: #FFFFFFAA;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+#btnContainer {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
