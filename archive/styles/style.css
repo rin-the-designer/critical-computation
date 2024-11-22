@@ -67,6 +67,7 @@ body {
 
 .title-area {
   font-size: calc(100vw / 16);
+  justify-content: space-between;
 }
 
 .tag {
@@ -148,4 +149,43 @@ body {
 
 .accordion.active .special-character {
   transform: rotate(90deg);
+}
+
+.modal {
+  background-color: var(--bg-color);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  max-width: 600px;
+  position: relative;
+  height: 100vh;
+  gap: 1rem;
+}
+
+.close-modal {
+  cursor: pointer;
+}
+
+#info-icon {
+  cursor: pointer;
+}
+
+.instructor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  text-align: right;
+  line-height: 1.2em;
 }

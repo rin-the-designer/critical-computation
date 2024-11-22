@@ -22,3 +22,24 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+// Add this to your existing script file
+const modal = document.getElementById('info-modal');
+const infoIcon = document.getElementById('info-icon');
+const closeBtn = document.querySelector('.close-modal');
+
+infoIcon.onclick = function() {
+  modal.style.display = 'flex';
+  modal.style.flexDirection = 'column';
+}
+
+closeBtn.onclick = function() {
+  modal.style.display = 'none';
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+}
