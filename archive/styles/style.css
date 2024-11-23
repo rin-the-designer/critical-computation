@@ -1,24 +1,19 @@
 :root {
-  font-family: 'InterVariable', sans-serif;
-  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-family: 'Inter', sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1;
 
   --bg-color: #ffffff;
   --text-main: #181818;
   --point-color: #ff8800;
 }
 
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
 ::selection {
   background-color: var(--point-color);
   color: var(--text-main);
-}
-
-@font-face {
-  font-family: 'InterVariable';
-  src: url('./assets/fonts/InterVariable.woff2') format('woff2');
-  font-weight: 100 900;
-  font-display: swap;
-  font-feature-settings: "cv01" 1, "cv02" 2, "cv03" 3, "cv04" 4, "cv05" 5,"cv06" 6, "cv07" 7, "cv08" 8, "cv09" 9, "cv10" 10, "ss01" 1, "ss02" 2, "ss03" 3, "ss04" 4, "ss05" 5;
-  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -111,8 +106,7 @@ body {
 }
 
 .special-character {
-  font-family: 'Inter';
-  font-feature-settings: "ss06" 1, "calt" 1, "dlig" 1;
+  font-feature-settings: 'ss06' 1;
   font-display: swap;
   display: inline-block;
   transition: transform 100ms ease-in;
