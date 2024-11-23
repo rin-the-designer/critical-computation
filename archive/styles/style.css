@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'InterVariable';
-  src: url('./assets/fonts/Inter-roman.var.woff2') format('woff2'), ;
+  src: url('/archive/assets/fonts/InterVariable.woff2') format('woff2'), ;
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -106,9 +106,7 @@ body {
 }
 
 .panel {
-  display: flex;
-  flex-direction: column;
-  padding: 0 18px;
+  flex-direction: row;
   background-color: var(--bg-color);
   display: none;
   overflow: hidden;
@@ -167,11 +165,17 @@ body {
   line-height: 1.2em;
 }
 
-.p5-sketch {
+.sketch-container {
   width: 100%;
   height: 100%;
 }
 
 .panel-text {
   width: 100%;
+  padding: 1.5rem;
+}
+
+iframe {
+  margin-top: -50px !important;
+  clip-path: inset(50px 0 0 0);
 }
