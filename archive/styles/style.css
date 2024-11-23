@@ -126,6 +126,7 @@ body {
 }
 
 .modal {
+  z-index: 1000;
   background-color: var(--bg-color);
   display: none;
   position: fixed;
