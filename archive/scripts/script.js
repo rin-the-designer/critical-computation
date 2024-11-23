@@ -51,26 +51,3 @@ function refreshIframe(sketchNumber) {
     iframe.src = iframe.src;
   }
 }
-
-// Function to hide navigation elements in iframes
-function hideIframeNavigation() {
-  const iframes = document.getElementsByTagName('iframe');
-  
-  Array.from(iframes).forEach(iframe => {
-    iframe.addEventListener('load', function() {
-      try {
-        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-        const navElements = iframeDocument.getElementsByClassName('nav');
-        
-        Array.from(navElements).forEach(nav => {
-          nav.style.cssText = 'display: none !important';
-        });
-      } catch (e) {
-        console.error('Error accessing iframe content:', e);
-      }
-    });
-  });
-}
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', hideIframeNavigation);
