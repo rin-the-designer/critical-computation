@@ -106,6 +106,8 @@ body {
 }
 
 .panel {
+  display: flex;
+  flex-direction: column;
   padding: 0 18px;
   background-color: var(--bg-color);
   display: none;
@@ -118,7 +120,7 @@ body {
   font-family: 'InterVariable';
   font-display: swap;
   display: inline-block;
-  transition: transform 100ms ease-in;
+  transition: transform 200ms ease-in;
 }
 
 .accordion.active .special-character {
@@ -163,4 +165,13 @@ body {
   gap: 0.5rem;
   text-align: right;
   line-height: 1.2em;
+}
+
+.p5-sketch {
+  width: 100%;
+  height: 100%;
+}
+
+.panel-text {
+  width: 100%;
 }
