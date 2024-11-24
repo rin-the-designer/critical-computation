@@ -1,5 +1,4 @@
 var acc = document.getElementsByClassName("accordion");
-var i;
 
 // Array of iframe sources
 const iframeSources = [
@@ -12,13 +11,13 @@ const iframeSources = [
   '../autobiographical-game/index.html'
 ];
 
-for (i = 0; i < acc.length; i++) {
+for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     // Get the index of the clicked accordion
     const currentIndex = Array.from(acc).indexOf(this);
     
     // Close all other accordions first
-    for (var j = 0; j < acc.length; j++) {
+    for (let j = 0; j < acc.length; j++) {
       var otherPanel = acc[j].nextElementSibling;
       if (this !== acc[j]) {
         acc[j].classList.remove("active");
