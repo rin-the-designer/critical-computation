@@ -1,0 +1,16 @@
+A description of your Data Portrait. What was the personal habit you were trying to track?
+I tracked my screen time for the past 7 days.
+
+An instruction for the viewers on how to read your data portrait.
+This data portrait is not supposed to be read. Through this assignment, I wanted to visualize how someone's personal data could be encrypted.
+
+Describe your design process. Include your numbered list and any other sketches or images that would help us better understand your process.
+I started off with gathering my screen time data. I wasn't able to find a way to export the data as a csv or any other table, so I manually wrote down my screen time in minutes. The column is divided by the category of the app I was using, and the rows are divided by days.
+On p5.js, I first made a cumulative bar graph. Then I mapped the row data so that it shows the time I spent on each category as a proportion of the total screen time of each day.
+I then made a function that could suffle the columns, making it harder for people to actually see how much time I spend on each category.
+
+What did you learn about yourself through the process of self-tracking?
+I spend a LOT OF TIME on screen. I figured that I spend almost 12 hours each day on a digital device. Since I extracted data by each categories, I was also able to find where I should spend less time on.
+
+What was gained / lost through the process of data visualization? 
+A lot of the data was intentionally lost during my visualization process. Although the actual data is on the top of the script, the visualization encrypted how much time I spent on each category.

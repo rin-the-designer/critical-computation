@@ -1,0 +1,8 @@
+1. Your design process. Include your design sketches.
+  I started off by drawing the face, which wasn't that hard to draw since my face had a simple shape. My first intention was to make the face loop whenever I press the arrow buttons on the keyboard. However, I wasn't able to find the way to do that in time, so I decided to make the face smaller/bigger on pressing the up and down arrows.
+  By trying to make the face resize on key press, I figured it would be best to have all the numbers in some kind of equation related to the width/height of the canvas. Through this process, I was able to make the face responsive.
+  Through using 'constrain' I restricted the value of some of the numbers to the canvas size, which made the pupil stay within the eye even when I moved my mouse outside the canvas.
+  To finalize, I logged some of the variables to the console, and made slight adjustments to the equations.
+
+2. What have you discovered about the form you've chosen through this assignment?
+  I learned 'constrain' is a good way to restrict the value between numbers you want it to be. And by using the 'map' fuction, it is easy to find the cordinates between your mouse and a specific point on your canvas. I wish I could have made this the way I initially wanted it to be, looping when I press keboard up and down. It is definitley something I will be trying to figure out in some of the next assignments.

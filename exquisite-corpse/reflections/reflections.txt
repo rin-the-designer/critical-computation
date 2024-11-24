@@ -1,0 +1,13 @@
+Your partners’ names
+Yuanning Han, Rex Jiang
+
+Your design process.
+//Sketches are included in the reflections folder.
+  I used 3D primitives for my Lost and Found, so I thought it was time for me to try out another 3D file after learning more about p5js.
+  I started off with the body part which I drew. I ran into the same problems I've encountered during my Lost and Found, which was having the pattern warp the way I want it to. For the New School sweater, this time I used a vertex and a wrap to make sure the pattern I created was located just the way I wanted it to. I then used rotateX, rotateY, and rotateZ to make the arms in the directions I wanted it to be in.
+  I then moved on to the head drawn by Yuanning, and same problem. The easiest way to create the head was a sphere, which already has predefined warp points. This time, I didn't use vertex and warp, but rather just started drawing on the 3D primitive itself, and moved around the 2D primitive elements so that it represents the face.
+  For the legs drawn by Rex, I wanted to keep the pixel graphic elements. So I added rectangular boxes around every corner of the pants. I also added a leg which wasn't depicted in the original sketch. I thought it would look better with the penguin feets.
+  Since I have tried using blender during my xFab 3D scanning assignment, I did think of just making parts of it in blender and import it to p5js, but thought it would be an extra restriction if I just used the predefined 3D primitives on p5js, which didn't turn out as bad as I thought it would be.
+
+A new background story you’re creating based on the collectively assembled information
+  I added some keyboard interaction. Pressing 1 would give the penguin a fish and pressing 2 would give the penguin a plastic bottle. The first thing that came to mind seeing the penguin head was the jackass penguin I saw in Cape Town, South Africa, and the fact that a lot of the penguins are losing their place to live due to global warming. I think the other elements(body, legs) somewhat made the penguin more characterized. And of course, they do have equal importance to the world as humans, so I thought having the human-shaped body wasn't a bad addition to the project.

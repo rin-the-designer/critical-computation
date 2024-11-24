@@ -1,0 +1,4 @@
+Describe the process of researching, designing, and fine-tuning your optical illusion.
+
+
+How might your optical illusion get deployed in the world around you? May it be incorporated into a browser extension? Can it possibly be turned into a piece of wearable?
