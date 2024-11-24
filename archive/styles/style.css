@@ -253,6 +253,10 @@ iframe {
   .panel-text {
     width: initial;
   }
+
+  .description {
+    height: initial;
+  }
 }
 
 @media (min-width: 1280px) {
