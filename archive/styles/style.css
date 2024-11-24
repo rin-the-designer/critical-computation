@@ -186,10 +186,22 @@ p {
 
 .close-modal {
   cursor: pointer;
+  transition: color 200ms ease-in;
+}
+
+.close-modal:hover {
+  color: var(--point-color);
+  transition: color 200ms ease-in;
 }
 
 #info-icon {
   cursor: pointer;
+  transition: color 200ms ease-in;
+}
+
+#info-icon:hover {
+  color: var(--point-color);
+  transition: color 200ms ease-in;
 }
 
 /* Additional Components */
