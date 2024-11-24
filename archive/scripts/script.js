@@ -87,25 +87,31 @@ let previousWidth = window.innerWidth;
 let previousHeight = window.innerHeight;
 
 window.addEventListener('resize', function() {
-    // Check if size actually changed significantly (more than 50px to avoid minor changes)
-    if (Math.abs(previousWidth - window.innerWidth) > 50 || 
-        Math.abs(previousHeight - window.innerHeight) > 50) {
-        
-        // Find currently active accordion
-        const activeAccordion = document.querySelector('.accordion.active');
-        if (activeAccordion) {
-            const currentIndex = Array.from(acc).indexOf(activeAccordion);
-            const panel = activeAccordion.nextElementSibling;
-            const iframe = panel.querySelector('iframe');
+    // First check if dimensions actually changed
+    const currentWidth = window.innerWidth;
+    const currentHeight = window.innerHeight;
+    
+    if (currentWidth !== previousWidth || currentHeight !== previousHeight) {
+        // Check if size changed significantly (more than 50px to avoid minor changes)
+        if (Math.abs(previousWidth - currentWidth) > 50 || 
+            Math.abs(previousHeight - currentHeight) > 50) {
             
-            // Reload the iframe if it exists
-            if (iframe) {
-                iframe.src = iframeSources[currentIndex];
+            // Find currently active accordion
+            const activeAccordion = document.querySelector('.accordion.active');
+            if (activeAccordion) {
+                const currentIndex = Array.from(acc).indexOf(activeAccordion);
+                const panel = activeAccordion.nextElementSibling;
+                const iframe = panel.querySelector('iframe');
+                
+                // Reload the iframe if it exists
+                if (iframe) {
+                    iframe.src = iframeSources[currentIndex];
+                }
             }
         }
         
         // Update previous dimensions
-        previousWidth = window.innerWidth;
-        previousHeight = window.innerHeight;
+        previousWidth = currentWidth;
+        previousHeight = currentHeight;
     }
 });
