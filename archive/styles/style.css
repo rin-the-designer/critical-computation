@@ -142,11 +142,13 @@ p {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   margin-top: 1rem;
+  text-decoration: none;
 }
 
 .see-more:hover {
   background-color: var(--point-color);
   color: var(--text-main);
+  text-decoration: underline;
 }
 
 /* Special Character Styles */
@@ -229,10 +231,8 @@ p {
 
 /* iframe Styles */
 iframe {
-  margin-top: -50px !important;
-  clip-path: inset(50px 0 0 0);
   border: none;
-  height: 650px;
+  height: 600px;
   width: 100%;
 }
 

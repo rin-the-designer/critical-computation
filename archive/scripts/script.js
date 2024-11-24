@@ -3,13 +3,13 @@ var i;
 
 // Array of iframe sources
 const iframeSources = [
-  'https://editor.p5js.org/rin-the-designer/full/Ug7KrPrsO',
-  'https://editor.p5js.org/rin-the-designer/full/EneGuaIXh',
-  'https://editor.p5js.org/rin-the-designer/full/wdZfz3XH9',
-  'https://editor.p5js.org/rin-the-designer/full/k2-mY4-Ii',
-  'https://editor.p5js.org/rin-the-designer/full/9P0WoqBL9',
-  'https://editor.p5js.org/rin-the-designer/full/NhWdU_dkj',
-  'https://rin-the-designer.github.io/critical-computation/autobiographical-game/'
+  '../lost-and-found/index.html',
+  '../face-generator/index.html',
+  '../experimental-clock/index.html',
+  '../exquisite-corpse/index.html',
+  '../optical-illusion/index.html',
+  '../data-portrait/index.html',
+  '../autobiographical-game/index.html'
 ];
 
 for (i = 0; i < acc.length; i++) {

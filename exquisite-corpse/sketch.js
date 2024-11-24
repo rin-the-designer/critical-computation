@@ -5,7 +5,7 @@ let redValue = 255;
 let redChanger = -1;
 
 function preload() {
-  neueDisplay = loadFont('/assets/NeueDisplay-Ultra.otf');
+  neueDisplay = loadFont('./assets/NeueDisplay-Ultra.otf');
 }
 
 function setup() {

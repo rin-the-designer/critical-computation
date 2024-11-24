@@ -1,6 +1,6 @@
 //preloading font
 function preload() {
-  bebasNeue = loadFont('/BebasNeue-Regular.ttf');
+  bebasNeue = loadFont('./BebasNeue-Regular.ttf');
 }
 
 //setting up canvas
