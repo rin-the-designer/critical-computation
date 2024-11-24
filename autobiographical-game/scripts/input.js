@@ -164,6 +164,8 @@ function mouseClicked() {
 }
 
 function arduinoJoystick(){
+  if (!isArduinoCompatible() || !port || !port.opened()) return;
+
   let str = port.readUntil("\n");
   if (str.length > 0) {
     joystickXYZ = split(str,",");

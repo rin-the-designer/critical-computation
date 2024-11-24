@@ -44,9 +44,4 @@ function draw() {
       break;
   }
   arduinoJoystick();
-  // if (!port.opened()) {
-  //   connectBtn.html('Connect to Arduino');
-  // } else {
-  //   connectBtn.html('Disconnect');
-  // }
 }

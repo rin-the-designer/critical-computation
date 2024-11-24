@@ -81,3 +81,31 @@ function refreshIframe(sketchNumber) {
     iframe.src = iframeSources[sketchNumber - 1];
   }
 }
+
+// Add viewport size change detection and reload
+let previousWidth = window.innerWidth;
+let previousHeight = window.innerHeight;
+
+window.addEventListener('resize', function() {
+    // Check if size actually changed significantly (more than 50px to avoid minor changes)
+    if (Math.abs(previousWidth - window.innerWidth) > 50 || 
+        Math.abs(previousHeight - window.innerHeight) > 50) {
+        
+        // Find currently active accordion
+        const activeAccordion = document.querySelector('.accordion.active');
+        if (activeAccordion) {
+            const currentIndex = Array.from(acc).indexOf(activeAccordion);
+            const panel = activeAccordion.nextElementSibling;
+            const iframe = panel.querySelector('iframe');
+            
+            // Reload the iframe if it exists
+            if (iframe) {
+                iframe.src = iframeSources[currentIndex];
+            }
+        }
+        
+        // Update previous dimensions
+        previousWidth = window.innerWidth;
+        previousHeight = window.innerHeight;
+    }
+});
