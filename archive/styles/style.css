@@ -1,7 +1,7 @@
+/* Root and Font Definitions */
 :root {
   font-family: 'InterVariable', sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1;
-
   --bg-color: #ffffff;
   --text-main: #181818;
   --point-color: #ff8800;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'InterVariable';
-  src: url('/archive/assets/fonts/InterVariable.woff2') format('woff2'), ;
+  src: url('/archive/assets/fonts/InterVariable.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -19,6 +19,7 @@
   :root { font-family: InterVariable, sans-serif; }
 }
 
+/* Base Styles */
 ::selection {
   background-color: var(--point-color);
   color: var(--text-main);
@@ -30,6 +31,13 @@ body {
   margin: 0;
 }
 
+p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.4em;
+}
+
+/* Layout Components */
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -44,6 +52,7 @@ body {
   justify-content: space-between;
 }
 
+/* Tag Components */
 .tag {
   display: inline-block;
   border: none;
@@ -66,12 +75,7 @@ body {
   background: var(--point-color);
 }
 
-@media (max-width: 768px) {
-  .title-area {
-    font-size: 2rem;
-  }
-}
-
+/* Accordion Components */
 .accordion {
   display: flex;
   align-items: center;
@@ -91,17 +95,11 @@ body {
   transition: 0.4s;
 }
 
-@media (max-width: 768px) {
-  .accordion {
-    font-size: 1rem;
-  }
-}
-
 .accordion:hover {
   background-color: #ccc;
 }
 
-.active {
+.accordion.active {
   background-color: var(--point-color);
 }
 
@@ -113,12 +111,45 @@ body {
   border-bottom: 2px solid var(--text-main);
 }
 
-@media (max-width: 768px) {
-  .panel {
-    flex-direction: column;
-  }
+.work-date {
+  font-size: 0.875rem;
+  line-height: 1.4em;
+  font-weight: 700;
 }
 
+.work-title {
+  font-size: 1.5rem;
+  line-height: 1.4em;
+  font-weight: 600;
+}
+
+.panel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.description {
+  height: -webkit-fill-available;
+}
+
+.see-more {
+  cursor: pointer;
+  background-color: var(--text-main);
+  color: var(--bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.see-more:hover {
+  background-color: var(--point-color);
+  color: var(--text-main);
+}
+
+/* Special Character Styles */
 .special-character {
   font-feature-settings: 'ss06' on;
   font-family: 'InterVariable';
@@ -131,6 +162,7 @@ body {
   transform: rotate(90deg);
 }
 
+/* Modal Components */
 .modal {
   z-index: 1000;
   background-color: var(--bg-color);
@@ -160,6 +192,7 @@ body {
   cursor: pointer;
 }
 
+/* Additional Components */
 .instructor {
   display: flex;
   flex-direction: row;
@@ -176,11 +209,13 @@ body {
   height: 600px;
 }
 
-.panel-text {
-  width: 100%;
-  padding: 1.5rem;
+.assignment-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 
+/* iframe Styles */
 iframe {
   margin-top: -50px !important;
   clip-path: inset(50px 0 0 0);
@@ -189,8 +224,27 @@ iframe {
   width: 100%;
 }
 
-.assignment-container {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
+/* Media Queries */
+@media (max-width: 768px) {
+  .title-area {
+    font-size: 2rem;
+  }
+  
+  .accordion {
+    font-size: 1rem;
+  }
+  
+  .panel {
+    flex-direction: column;
+  }
+
+  .panel-text {
+    width: initial;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel-text {
+    width: 50%;
+  }
 }

@@ -9,7 +9,7 @@ const iframeSources = [
   'https://editor.p5js.org/rin-the-designer/full/k2-mY4-Ii',
   'https://editor.p5js.org/rin-the-designer/full/9P0WoqBL9',
   'https://editor.p5js.org/rin-the-designer/full/NhWdU_dkj',
-  'https://editor.p5js.org/rin-the-designer/full/Ug7KrPrsO'
+  'https://rin-the-designer.github.io/critical-computation/autobiographical-game/'
 ];
 
 for (i = 0; i < acc.length; i++) {
