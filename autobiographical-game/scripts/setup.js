@@ -6,6 +6,7 @@ let fontUTF;
 let port;
 let connectBtn;
 let btnContainer;
+let finishedGame = false;
 
 let joystickXYZ;
 let joystickX;
@@ -55,3 +56,15 @@ function connectBtnClick() {
 
 // Call loadWebSerial when the script loads
 loadWebSerial();
+
+// Add this function after the existing variables
+function checkGameCompletion() {
+  if (hasReached50UK && hasReached50ZA && hasReached50KR && hasReached50US) {
+    finishedGame = true;
+    if (firstTimeOutro) {
+      showOutro = true;
+    } else {
+      showOutro = false;
+    }
+  }
+}

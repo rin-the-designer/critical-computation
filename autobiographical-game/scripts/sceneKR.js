@@ -47,6 +47,7 @@ function sceneKR() {
     if (scoreKR >= 50 && !hasReached50KR) {
       victoryKR = true;
       hasReached50KR = true;
+      checkGameCompletion();
       return;
     }
 
@@ -152,11 +153,11 @@ function displayStoryKR() {
   
   switch (storyPhaseKR) {
     case 0:
-      text("When I got back to Seoul\nafter leaving South Africa,\nKorea started to suffer from\nmicrodust pollution.", width / 2, height * 3/8);
+      text("When Rin got back to Seoul\nafter leaving South Africa,\nKorea started to suffer from\nmicrodust pollution.", width / 2, height * 3/8);
       text("'Enter' to continue", width / 2, height * 3/4);
       break;
     case 1:
-      text("The sky of Seoul wasn't like it was before.\nPlease help me get rid of the microdust.", width / 2, height / 2);
+      text("The sky of Seoul wasn't like it was before.\nPlease help Rin get rid of the microdust.", width / 2, height / 2);
       text("'Enter' to continue", width / 2, height * 3/4);
       break;
     case 2:

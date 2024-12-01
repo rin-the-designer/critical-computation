@@ -1,7 +1,7 @@
 let drawPlayerZA;
 let baboons = [];
 let baboonSpeed = 2;
-let scoreZA = 49;
+let scoreZA = 0;
 let gameOverZA = false;
 let baboonSpacing = 60;
 let firstTimeZA = true;
@@ -11,9 +11,9 @@ let storyPhaseZA = 0;
 let victoryZA = false;
 
 function loadSceneZA() {
-  //baboonImg = loadImage('./assets/images/baboon.png');
   capetown = loadImage('./assets/images/capetown.png');
   playerZAimg = loadImage('./assets/images/playerZA.png');
+  baboonImg = loadImage('./assets/images/baboon.png');
 }
 
 function setupZA() {
@@ -37,6 +37,7 @@ function sceneZA() {
     if (scoreZA >= 50 && !hasReached50ZA) {
       victoryZA = true;
       hasReached50ZA = true;
+      checkGameCompletion();
       return;
     }
 
@@ -127,11 +128,11 @@ function displayStoryZA() {
   
   switch (storyPhaseZA) {
     case 0:
-      text("When I was traveling Cape Town,\nI was chased by baboons.", width / 2, height / 2);
+      text("When Rin was traveling Cape Town,\nhe was chased by baboons.", width / 2, height / 2);
       text("'Enter' to continue", width / 2, height * 3/4);
       break;
     case 1:
-      text("It was a life threatening experience.\nMake sure that I run away from the baboons.", width / 2, height / 2);
+      text("It was a life threatening experience for him.\nMake sure that he runs away from the baboons.", width / 2, height / 2);
       text("'Enter' to continue", width / 2, height * 3/4);
       break;
     case 2:
@@ -210,19 +211,20 @@ class baboon {
     const edge = random(['top', 'bottom', 'left', 'right']);
     if (edge === 'top') {
       this.x = random(width);
-      this.y = -40;
+      this.y = -50;
     } else if (edge === 'bottom') {
       this.x = random(width);
-      this.y = height + 40;
+      this.y = height + 50;
     } else if (edge === 'left') {
-      this.x = -40;
+      this.x = -50;
       this.y = random(height);
     } else if (edge === 'right') {
-      this.x = width + 40;
+      this.x = width + 50;
       this.y = random(height);
     }
 
-    this.d = 40;
+    this.w = 50;
+    this.h = 50;
     this.targetX = drawPlayerZA.x;
     this.targetY = drawPlayerZA.y;
     this.angle = atan2(this.targetY - this.y, this.targetX - this.x);
@@ -235,20 +237,23 @@ class baboon {
 
   offscreen() {
     return (
-      this.x < -this.d * 2 || this.x > width + this.d * 2 ||
-      this.y < -this.d * 2 || this.y > height + this.d * 2
+      this.x < -this.w || this.x > width + this.w ||
+      this.y < -this.h || this.y > height + this.h
     );
   }
 
   hits(drawPlayerZA) {
     let playerZACenterX = drawPlayerZA.x + drawPlayerZA.w/2;
     let playerZACenterY = drawPlayerZA.y + drawPlayerZA.h/2;
-    let playerZARadius = drawPlayerZA.h * sqrt(2) / 3;
-    let distFromBaboon = dist(playerZACenterX, playerZACenterY, this.x, this.y);
-    return distFromBaboon < this.d / 2 + playerZARadius;
+    let playerZARadius = drawPlayerZA.h * sqrt(2) / 2;
+    let baboonCenterX = this.x + this.w/2;
+    let baboonCenterY = this.y + this.h/2;
+    let baboonRadius = this.w * sqrt(2) / 3;
+    let distFromBaboon = dist(playerZACenterX, playerZACenterY, baboonCenterX, baboonCenterY);
+    return distFromBaboon < baboonRadius + playerZARadius;
   }
 
   show() {
-    circle(this.x, this.y - this.d, this.d);
+    image(baboonImg, this.x, this.y, this.w, this.h);
   }
 }

@@ -11,6 +11,31 @@ function keyPressed() {
     resetGameKR();
     resetGameUS();
   }
+  if (sceneNum === 0) {
+    if (key === 'Enter') {
+      if (showIntro) {
+        if (storyPhaseIntro === 0) {
+          storyPhaseIntro = 1;
+        } else if (storyPhaseIntro === 1) {
+          storyPhaseIntro = 2;
+        } else if (storyPhaseIntro === 2) {
+          storyPhaseIntro = 3;
+        }
+      } else if (showOutro) {
+        if (storyPhaseOutro === 0) {
+          storyPhaseOutro = 1;
+        } else if (storyPhaseOutro === 1) {
+          storyPhaseOutro = 2;
+        } else if (storyPhaseOutro === 2) {
+          storyPhaseOutro = 3;
+        }
+      }
+    }
+    if (key === 'r' || key === 'R') {
+      finishedGame = true;
+      showOutro = true;
+    }
+  }
 
   if (sceneNum === 10){
     if (gameOverUK && (key === 'r' || key === 'R')) {
@@ -117,7 +142,7 @@ function keyPressed() {
         victoryUS = false;
       }
       if (key === 'n' || key === 'N') {
-        sceneNum = 60;
+        sceneNum = 10;
         resetGameUS();
       }
     }
@@ -141,9 +166,9 @@ function keyReleased() {
 
 //Mouse
 function mouseClicked() {
-  if (sceneNum === 0 && mouseY > height * 2 / 3 && mouseY < height * 7 / 8) {
+  if (sceneNum === 0 && !showIntro && !showOutro && mouseY > height * 2 / 3 && mouseY < height * 7 / 8) {
     if (mouseX > width/10*0 && mouseX < width/10*2){
-      sceneNum = 1;
+      sceneNum = 10;
     }
     if (mouseX > width/10*2 && mouseX < width/10*4){
       sceneNum = 20;
@@ -157,9 +182,6 @@ function mouseClicked() {
     if (mouseX > width/10*8 && mouseX < width/10*10){
       sceneNum = 50;
     }
-  }
-  if (sceneNum === 1){
-    sceneNum = 10;
   }
 }
 

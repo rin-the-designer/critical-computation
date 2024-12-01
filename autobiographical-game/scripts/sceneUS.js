@@ -12,8 +12,10 @@ let hasReached50US = false;
 let showIntroStoryUS = true;
 let storyPhaseUS = 0;
 let victoryUS = false;
+let nextObstacleFrame = 0;
 
 function loadSceneUS() {
+  newyork = loadImage('./assets/images/newyork.png');
   obstacle1 = loadImage('./assets/images/rat1.png');
   playerUSimg = loadImage('./assets/images/playerUS.png');
 }
@@ -24,7 +26,7 @@ function setupUS() {
 }
 
 function sceneUS() {
-  background(255);
+  background(newyork);
   
   if (showIntroStoryUS && firstTimeUS) {
     displayStoryUS();
@@ -37,18 +39,23 @@ function sceneUS() {
   }
   
   if(!gameOverUS) {
+    if (scoreUS >= 50 && !hasReached50US) {
+      victoryUS = true;
+      hasReached50US = true;
+      checkGameCompletion();
+      return;
+    }
+
     adjustDifficultyUS();
-    
-    //line
-    rect(0, height/3*2, width, 2);
 
     //playerUS
     drawPlayerUS.update();
     drawPlayerUS.show();
     
     //obstacle
-    if (frameCount % obstacleSpacing === 0) {
+    if (frameCount >= nextObstacleFrame) {
       obstacles.push(new obstacle(speedMultiplier));
+      nextObstacleFrame = frameCount + obstacleSpacing;
     }
     for (let i = obstacles.length - 1; i >= 0; i--) {
       obstacles[i].update();
@@ -98,26 +105,26 @@ function sceneUS() {
 function adjustDifficultyUS() {
   if (scoreUS >= 0){
     speedMultiplier = 1;
-    obstacleSpacing = 120;
+    obstacleSpacing = floor(random(40, 121));
   }
   if (scoreUS >= 10) {
     speedMultiplier = 1.5;
-    obstacleSpacing = 90;
+    obstacleSpacing = floor(random(50, 121));
   } 
   if (scoreUS >= 20) {
     speedMultiplier = 2;
-    obstacleSpacing = 70;
+    obstacleSpacing = floor(random(50, 101));
   } 
   if (scoreUS >= 30) {
     speedMultiplier = 2.5;
-    obstacleSpacing = 50;
+    obstacleSpacing = floor(random(40, 71));
   }
 }
 
 function displayScoreUS() {
   textSize(18);
   textFont(fontRegular);
-  fill(0);
+  fill(255);
   textAlign(LEFT);
   text("Score: " + scoreUS, 10, 20);
 }
@@ -156,11 +163,11 @@ function displayStoryUS() {
   
   switch (storyPhaseUS) {
     case 0:
-      text("Now that I'm living in New York,\nOne thing I really want to avoid\nare the rats.", width / 2, height / 2);
+      text("Now that Rin is living in New York,\nOne thing he really wants to avoid\nare the rats.", width / 2, height / 2);
       text("'Enter' to continue", width / 2, height * 3/4);
       break;
     case 1:
-      text("I think I see at least one of them\nevery week.\nMake sure to jump over them.", width / 2, height / 2);
+      text("He sees at least one of them\nevery week.\nMake sure to jump over them.", width / 2, height / 2);
       text("'Enter' to continue", width / 2, height * 3/4);
       break;
     case 2:
@@ -188,6 +195,7 @@ function resetGameUS() {
   storyPhaseUS = 0;
   showIntroStoryUS = false;
   victoryUS = false;
+  nextObstacleFrame = 0;
 }
 
 class playerUS {
@@ -232,24 +240,18 @@ class playerUS {
 class obstacle {
   constructor(speedMultiplier) {
     this.x = width;
-    
-    if (scoreUS >= 20) {
-      this.y = groundLevel - random([0, 40]);
-    } else {
-      this.y = groundLevel;
-    }
-    
+    this.y = groundLevel;
     this.w = 60;
     this.h = 20;
     this.speed = 5 * speedMultiplier;
-    this.passed = false; //165 | acknowledgement: check Line 62
+    this.passed = false; // acknowledgement: check Line 60
   }
   
   update() {
     this.x -= this.speed;
   }
   
-  //173~175 | acknowledgement: check Line 62
+  // acknowledgement: check Line 60
   offscreen() {
     return this.x < -this.w;
   }

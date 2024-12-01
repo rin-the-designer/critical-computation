@@ -39,6 +39,7 @@ function sceneUK() {
     if (scoreUK >= 50 && !hasReached50UK) {
       victoryUK = true;
       hasReached50UK = true;
+      checkGameCompletion();
       return;
     }
 
@@ -146,11 +147,11 @@ function displayStoryUK() {
   
   switch (storyPhaseUK) {
     case 0:
-      text("When I was living in London,\nI didn't really like the weather.", width / 2, height / 2);
+      text("When Rin was living in London,\nhe didn't really like the weather.", width / 2, height / 2);
       text("'Enter' to continue", width / 2, height * 3/4);
       break;
     case 1:
-      text("It was raining a lot of the time.\nMake sure that I don't get wet by the rain.", width / 2, height / 2);
+      text("It was raining a lot of the time.\nMake sure that Rin doesn't get wet by the rain.", width / 2, height / 2);
       text("'Enter' to continue", width / 2, height * 3/4);
       break;
     case 2:
