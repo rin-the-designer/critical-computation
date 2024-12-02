@@ -56,6 +56,18 @@ const infoIcon = document.getElementById('info-icon');
 const closeBtn = document.querySelector('.close-modal');
 
 infoIcon.onclick = function() {
+  // Close all accordions before opening modal
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].classList.remove("active");
+    const panel = acc[i].nextElementSibling;
+    panel.style.display = "none";
+    // Remove src from iframes
+    const iframe = panel.querySelector('iframe');
+    if (iframe) {
+      iframe.removeAttribute('src');
+    }
+  }
+
   modal.style.display = 'flex';
   modal.style.flexDirection = 'column';
   
