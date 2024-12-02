@@ -145,7 +145,17 @@ function setupIframeForMobile(iframe) {
         // Enable touch interactions while preventing scrolling
         iframe.style.pointerEvents = 'auto';
         iframe.style.overflow = 'hidden';
-        // Prevent any iOS bounce effects
         iframe.style.overscrollBehavior = 'none';
+        
+        // Add specific attributes for iOS Safari
+        iframe.setAttribute('scrolling', 'no');
+        iframe.style.webkitOverflowScrolling = 'touch';
+        
+        // Add specific styles to the parent container
+        const container = iframe.parentElement;
+        if (container) {
+            container.style.webkitOverflowScrolling = 'touch';
+            container.style.overflow = 'hidden';
+        }
     }
 }
