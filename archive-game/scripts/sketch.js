@@ -1,5 +1,6 @@
 let groundLevel;
 let rins = [];
+let isMobile = false;
 
 function preload() {
   rin1 = loadImage('./assets/images/rin1.png');
@@ -11,12 +12,15 @@ function setup() {
   groundLevel = windowHeight - 80;
   cursor('grab');
   
+  // Check if device is mobile
+  isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
   // Add initial Rin at the center of the screen
   rins.push({
-    x: windowWidth / 2 - 20,  // Center horizontally
-    y: groundLevel,           // Place on ground
+    x: windowWidth / 2 - 20,
+    y: groundLevel,
     velocity: 0,
-    horizontalSpeed: 3        // Start moving right
+    horizontalSpeed: 3
   });
 }
 
@@ -25,7 +29,7 @@ function draw() {
   
   // Update and draw all stored rins
   for (let rin of rins) {
-    // Apply gravity if not on ground
+    // Apply gravity
     if (rin.y < groundLevel) {
       rin.velocity += 0.5;
       rin.y += rin.velocity;
@@ -43,26 +47,25 @@ function draw() {
     drawRin(rin.x, rin.y, rin.horizontalSpeed);
   }
 
-  // Draw preview Rin under mouse if mouse is in canvas
-  if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
-    drawRin(mouseX - 20, mouseY - 5, 3); // Using rin2 (facing right) for preview
+  // Draw preview Rin under mouse if mouse is in canvas and not on mobile
+  if (!isMobile && mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+    drawRin(mouseX - 20, mouseY - 5, 3);
   }
 }
 
 function drawRin(x, y, horizontalSpeed) {
-  // Use rin2 when moving right, rin1 when moving left
-  let rinSprite = horizontalSpeed > 0 ? rin2 : rin1;
-  image(rinSprite, x, y, 40, 80);
+  let rinVersion = horizontalSpeed > 0 ? rin2 : rin1;
+  image(rinVersion, x, y, 40, 80);
 }
 
 function mouseClicked() {
   // Only add Rin if click is within canvas
   if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
     rins.push({ 
-      x: mouseX - 20, // Center horizontally (40/2 = 20)
-      y: mouseY - 5, // Center vertically (80/2 = 40)
+      x: mouseX - 20,
+      y: mouseY - 5,
       velocity: 0,
-      horizontalSpeed: random([-3, 3]) // Random initial direction, either -3 or 3
+      horizontalSpeed: random([-3, 3])
     });
   }
   return false;
