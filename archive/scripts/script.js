@@ -171,3 +171,24 @@ function setupIframeForMobile(iframe) {
         }
     }
 }
+
+
+// Alerts for mobile devices
+// Details button
+const detailsButton = document.getElementById('details-button');
+detailsButton.addEventListener('click', function() {
+  const detailsContent = document.getElementById('details-content');
+  detailsContent.style.display = detailsContent.style.display === 'flex' ? 'none' : 'flex';
+});
+
+// Alert
+const alert = document.getElementById('alert');
+function showAlertMobile() {
+  if (isMobile) {
+    alert.style.display = 'flex';
+  } else {
+    alert.style.display = 'none';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', showAlertMobile);

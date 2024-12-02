@@ -390,3 +390,27 @@ p {
     grid-row: 2 / 3;
   }
 }
+
+#alert {
+  display: none;
+  line-height: 1.4em;
+}
+
+#details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#details-button {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #c0c0c0;
+}
+
+#details-content {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #c0c0c0;
+}
