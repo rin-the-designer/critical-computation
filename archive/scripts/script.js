@@ -86,14 +86,20 @@ function refreshIframe(sketchNumber) {
 // Add viewport size change detection and reload
 let previousWidth = window.innerWidth;
 let previousHeight = window.innerHeight;
+let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 window.addEventListener('resize', function() {
     // First check if dimensions actually changed
     const currentWidth = window.innerWidth;
     const currentHeight = window.innerHeight;
     
+    // Skip height-only changes on mobile devices (likely due to scroll)
+    if (isMobile && currentWidth === previousWidth) {
+        return;
+    }
+    
     if (currentWidth !== previousWidth || currentHeight !== previousHeight) {
-        // Check if size changed significantly (more than 50px to avoid minor changes)
+        // Check if size changed significantly (more than 25px to avoid minor changes)
         if (Math.abs(previousWidth - currentWidth) > 25 || 
             Math.abs(previousHeight - currentHeight) > 25) {
             

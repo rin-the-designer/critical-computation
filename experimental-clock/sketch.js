@@ -73,10 +73,15 @@ function draw() {
   drawSojuBottles(floor(sojuTime));
   
   //displaying time numbers
-  textSize(48);
+  if (windowWidth > 768){
+    textSize(48);
+  } else {
+    textSize(24);
+  }
   text(`${nf(m, 3, 0)} Min`, widthSixth, height / 2);
   text(`${nf(beerTime, 1, 1)} Bottles`, widthSixth * 3, height / 2);
   text(`${nf(sojuTime, 1, 1)} Bottles`, widthSixth * 5, height / 2);
+
   
   //displaying fixed text
   textSize(20);

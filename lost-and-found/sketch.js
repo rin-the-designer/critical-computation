@@ -32,7 +32,7 @@ function setup() {
 }
 
 function draw() {
-  background(230);
+  background(240);
   lights();
   noStroke();
   orbitControl();
