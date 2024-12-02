@@ -1,19 +1,19 @@
 var acc = document.getElementsByClassName("accordion");
 const iframeSources = [
-  '../lost-and-found/index.html',
-  '../face-generator/index.html',
-  '../experimental-clock/index.html',
-  '../exquisite-corpse/index.html',
-  '../optical-illusion/index.html',
-  '../data-portrait/index.html',
-  '../autobiographical-game/index.html'
+  "../lost-and-found/index.html",
+  "../face-generator/index.html",
+  "../experimental-clock/index.html",
+  "../exquisite-corpse/index.html",
+  "../optical-illusion/index.html",
+  "../data-portrait/index.html",
+  "../autobiographical-game/index.html",
 ];
 
 for (let i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
+  acc[i].addEventListener("click", function () {
     // Get the index of the clicked accordion
     const currentIndex = Array.from(acc).indexOf(this);
-    
+
     // Close all other accordions first
     for (let j = 0; j < acc.length; j++) {
       var otherPanel = acc[j].nextElementSibling;
@@ -21,9 +21,9 @@ for (let i = 0; i < acc.length; i++) {
         acc[j].classList.remove("active");
         otherPanel.style.display = "none";
         // Remove src from other iframes when closing
-        const otherIframe = otherPanel.querySelector('iframe');
+        const otherIframe = otherPanel.querySelector("iframe");
         if (otherIframe) {
-          otherIframe.removeAttribute('src');
+          otherIframe.removeAttribute("src");
         }
       }
     }
@@ -31,18 +31,18 @@ for (let i = 0; i < acc.length; i++) {
     // Toggle the clicked accordion
     this.classList.toggle("active");
     var panel = this.nextElementSibling;
-    
+
     if (panel.style.display === "flex") {
       panel.style.display = "none";
       // Remove src when closing
-      const iframe = panel.querySelector('iframe');
+      const iframe = panel.querySelector("iframe");
       if (iframe) {
-        iframe.removeAttribute('src');
+        iframe.removeAttribute("src");
       }
     } else {
       panel.style.display = "flex";
       // Inject the corresponding iframe source
-      const iframe = panel.querySelector('iframe');
+      const iframe = panel.querySelector("iframe");
       if (iframe) {
         setupIframeForMobile(iframe);
         iframe.src = iframeSources[currentIndex];
@@ -51,42 +51,42 @@ for (let i = 0; i < acc.length; i++) {
   });
 }
 
-const modal = document.getElementById('info-modal');
-const infoIcon = document.getElementById('info-icon');
-const closeBtn = document.querySelector('.close-modal');
+const modal = document.getElementById("info-modal");
+const infoIcon = document.getElementById("info-icon");
+const closeBtn = document.querySelector(".close-modal");
 
-infoIcon.onclick = function() {
+infoIcon.onclick = function () {
   // Close all accordions before opening modal
   for (let i = 0; i < acc.length; i++) {
     acc[i].classList.remove("active");
     const panel = acc[i].nextElementSibling;
     panel.style.display = "none";
     // Remove src from iframes
-    const iframe = panel.querySelector('iframe');
+    const iframe = panel.querySelector("iframe");
     if (iframe) {
-      iframe.removeAttribute('src');
+      iframe.removeAttribute("src");
     }
   }
 
-  modal.style.display = 'flex';
-  modal.style.flexDirection = 'column';
-  
-  // Inject the iframe source when opening the modal
-  const archiveGameIframe = document.querySelector('.archive-game iframe');
-  if (archiveGameIframe && !archiveGameIframe.src) {
-    archiveGameIframe.src = '../archive-game/index.html';
-  }
-}
+  modal.style.display = "flex";
+  modal.style.flexDirection = "column";
 
-closeBtn.onclick = function() {
-  modal.style.display = 'none';
-  
-  // Optionally, remove the iframe source when closing
-  const archiveGameIframe = document.querySelector('.archive-game iframe');
-  if (archiveGameIframe) {
-    archiveGameIframe.removeAttribute('src');
+  // Inject the iframe source when opening the modal
+  const archiveGameIframe = document.querySelector(".archive-game iframe");
+  if (archiveGameIframe && !archiveGameIframe.src) {
+    archiveGameIframe.src = "../archive-game/index.html";
   }
-}
+};
+
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+
+  // Optionally, remove the iframe source when closing
+  const archiveGameIframe = document.querySelector(".archive-game iframe");
+  if (archiveGameIframe) {
+    archiveGameIframe.removeAttribute("src");
+  }
+};
 
 // Function to refresh a specific iframe
 function refreshIframe(sketchNumber) {
@@ -105,96 +105,93 @@ let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 let resizeTimer;
 
 // Replace the existing resize event listener
-window.addEventListener('resize', function() {
-    // Clear any existing timer
-    clearTimeout(resizeTimer);
-    
-    const currentWidth = window.innerWidth;
-    const currentHeight = window.innerHeight;
-    
-    // Skip height-only changes on mobile devices (likely due to scroll)
-    if (isMobile && currentWidth === previousWidth) {
-        return;
-    }
-    
-    // Wait for resize to finish before reloading
-    resizeTimer = setTimeout(() => {
-        // Only reload if the size changed significantly
-        if (Math.abs(previousWidth - currentWidth) > 50 || 
-            Math.abs(previousHeight - currentHeight) > 50) {
-            
-            const activeAccordion = document.querySelector('.accordion.active');
-            if (activeAccordion) {
-                const currentIndex = Array.from(acc).indexOf(activeAccordion);
-                const panel = activeAccordion.nextElementSibling;
-                const iframe = panel.querySelector('iframe');
-                
-                // Only reload if iframe exists and source is set
-                if (iframe && iframe.src) {
-                    iframe.src = iframeSources[currentIndex];
-                }
-            }
+window.addEventListener("resize", function () {
+  // Clear any existing timer
+  clearTimeout(resizeTimer);
 
-            // Only reload modal iframe if modal is visible
-            const modal = document.getElementById('info-modal');
-            if (modal.style.display === 'flex') {
-                const archiveGameIframe = document.querySelector('.archive-game iframe');
-                if (archiveGameIframe && archiveGameIframe.src) {
-                    archiveGameIframe.src = '../archive-game/index.html';
-                }
-            }
-            
-            // Update previous dimensions
-            previousWidth = currentWidth;
-            previousHeight = currentHeight;
+  const currentWidth = window.innerWidth;
+  const currentHeight = window.innerHeight;
+
+  // Skip height-only changes on mobile devices (likely due to scroll)
+  if (isMobile && currentWidth === previousWidth) {
+    return;
+  }
+
+  // Wait for resize to finish before reloading
+  resizeTimer = setTimeout(() => {
+    // Only reload if the size changed significantly
+    if (
+      Math.abs(previousWidth - currentWidth) > 50 ||
+      Math.abs(previousHeight - currentHeight) > 50
+    ) {
+      const activeAccordion = document.querySelector(".accordion.active");
+      if (activeAccordion) {
+        const currentIndex = Array.from(acc).indexOf(activeAccordion);
+        const panel = activeAccordion.nextElementSibling;
+        const iframe = panel.querySelector("iframe");
+
+        // Only reload if iframe exists and source is set
+        if (iframe && iframe.src) {
+          iframe.src = iframeSources[currentIndex];
         }
-    }, 250); // Wait 250ms after resize ends before reloading
+      }
+
+      // Only reload modal iframe if modal is visible
+      const modal = document.getElementById("info-modal");
+      if (modal.style.display === "flex") {
+        const archiveGameIframe = document.querySelector(
+          ".archive-game iframe"
+        );
+        if (archiveGameIframe && archiveGameIframe.src) {
+          archiveGameIframe.src = "../archive-game/index.html";
+        }
+      }
+
+      // Update previous dimensions
+      previousWidth = currentWidth;
+      previousHeight = currentHeight;
+    }
+  }, 250); // Wait 250ms after resize ends before reloading
 });
 
 // Add this function to set proper iframe attributes
 function setupIframeForMobile(iframe) {
-    if (iframe) {
-        // Enable touch interactions while preventing scrolling
-        iframe.style.pointerEvents = 'auto';
-        iframe.style.overflow = 'hidden';
-        iframe.style.overscrollBehavior = 'none';
-        
-        // Add specific attributes for iOS Safari
-        iframe.setAttribute('scrolling', 'no');
-        iframe.style.webkitOverflowScrolling = 'touch';
-        
-        // Add specific styles to the parent container
-        const container = iframe.parentElement;
-        if (container) {
-            container.style.webkitOverflowScrolling = 'touch';
-            container.style.overflow = 'hidden';
-        }
+  if (iframe) {
+    // Enable touch interactions while preventing scrolling
+    iframe.style.pointerEvents = "auto";
+    iframe.style.overflow = "hidden";
+    iframe.style.overscrollBehavior = "none";
+
+    // Add specific attributes for iOS Safari
+    iframe.setAttribute("scrolling", "no");
+    iframe.style.webkitOverflowScrolling = "touch";
+
+    // Add specific styles to the parent container
+    const container = iframe.parentElement;
+    if (container) {
+      container.style.webkitOverflowScrolling = "touch";
+      container.style.overflow = "hidden";
     }
-}
-
-
-// Alerts for mobile devices
-// Details button
-const detailsButton = document.getElementById('details-button');
-detailsButton.addEventListener('click', function() {
-  const detailsContent = document.getElementById('details-content');
-  detailsContent.style.display = detailsContent.style.display === 'flex' ? 'none' : 'flex';
-});
-
-// Alert
-const alert = document.getElementById('alert');
-function showAlertMobile() {
-  if (isMobile) {
-    alert.style.display = 'flex';
-  } else {
-    alert.style.display = 'none';
   }
 }
 
-document.addEventListener('DOMContentLoaded', showAlertMobile);
+// Alerts for mobile devices
+// Details button
+const detailsButton = document.getElementById("details-button");
+detailsButton.addEventListener("click", function () {
+  const detailsContent = document.getElementById("details-content");
+  detailsContent.style.display =
+    detailsContent.style.display === "flex" ? "none" : "flex";
+});
 
-// Google tag (gtag.js)
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-1SJR2XGQGM');
+// Alert
+const alert = document.getElementById("alert");
+function showAlertMobile() {
+  if (isMobile) {
+    alert.style.display = "flex";
+  } else {
+    alert.style.display = "none";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", showAlertMobile);

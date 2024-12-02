@@ -1,216 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archive</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-  <link rel="manifest" href="./assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="42b7ed89-7d8e-4c0b-adb5-12ae899b2838"></script>
-</head>
-<body>
-  <div id="info-modal" class="modal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="42b7ed89-7d8e-4c0b-adb5-12ae899b2838"
+    ></script>
+  </head>
+  <body>
+    <div id="info-modal" class="modal">
+      <div class="container title-area">
+        <span>Critical Computation</span>
+        <span class="close-modal">ⓧ</span>
+      </div>
+      <div class="modal-container">
+        <div class="modal-content modal-item-1">
+          <div class="instructor">
+            <b>2024 Fall</b>
+            <b>Instructors</b>
+          </div>
+          <div class="instructor">
+            <b>Lab 1 - 4</b>
+            <span>Terry Kahn</span>
+          </div>
+          <div class="instructor">
+            <b>Lab 5 - 7</b>
+            <span>Ally Luo</span>
+          </div>
+          <div class="instructor">
+            <b>Lecture</b>
+            <span>Xin Xin<br />Katherine Moriwaki</span>
+          </div>
+        </div>
+        <div class="modal-content modal-item-3">
+          <b>Reflections</b>
+          <span
+            >PGTE 5250(Lab), PGTE 5251(Lecture), MFA Design and Technology,
+            Parsons School of Design, The New School.</span
+          >
+          <span
+            >Through this course, I learned how to use p5.js, a JavaScript
+            library for creative coding, and how to make interactive objects for
+            webs.
+          </span>
+        </div>
+        <div class="modal-content modal-item-2">
+          <b>Rin Kim</b>
+          <span style="height: 100%"
+            >Rin is a UI/UX designer who is interested in how people interact
+            with digital products. He is passionate about learning new
+            technologies and finding ways to make design more intuitive,
+            inclusive, and interactive.</span
+          >
+          <a
+            href="https://rinchong.kim/resume/"
+            target="_blank"
+            class="see-more"
+            >Résumé →</a
+          >
+        </div>
+        <div class="archive-game">
+          <iframe width="100%" height="100%" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+
     <div class="container title-area">
       <span>Critical Computation</span>
-      <span class="close-modal">ⓧ</span>
+      <span id="info-icon">ⓘ</span>
     </div>
-    <div class="modal-container">
-      <div class="modal-content modal-item-1">
-        <div class="instructor">  
-          <b>2024 Fall</b>
-          <b>Instructors</b>
-        </div>
-        <div class="instructor">
-          <b>Lab 1 - 4</b>
-          <span>Terry Kahn</span>
-        </div>
-        <div class="instructor">
-          <b>Lab 5 - 7</b>
-          <span>Ally Luo</span>
-        </div>
-        <div class="instructor">
-          <b>Lecture</b>
-          <span>Xin Xin<br>Katherine Moriwaki</span>
-        </div>
-      </div>
-      <div class="modal-content modal-item-3">
-        <b>Reflections</b>
-        <span>PGTE 5250(Lab), PGTE 5251(Lecture), MFA Design and Technology, Parsons School of Design, The New School.</span>
-        <span>Through this course, I learned how to use p5.js, a JavaScript library for creative coding, and how to make interactive objects for webs. </span>
-      </div>
-      <div class="modal-content modal-item-2">
-        <b>Rin Kim</b>
-        <span style="height: 100%;">Rin is a UI/UX designer who is interested in how people interact with digital products. He is passionate about learning new technologies and finding ways to make design more intuitive, inclusive, and interactive.</span>
-        <a href="https://rinchong.kim/resume/" target="_blank" class="see-more">Résumé →</a>
-      </div>
-      <div class="archive-game">
-        <iframe width="100%" height="100%" scrolling="no"></iframe>
-      </div>
-    </div>
-  </div>
 
-  <div class="container title-area">
-    <span>Critical Computation</span>
-    <span id="info-icon">ⓘ</span>
-  </div>
-  
-  <div class="container">
-    <a class="tag" id="name-tag" href="https://rinchong.kim" target="_blank">
-      Rin Kim →
-    </a>
-    <a class="tag" href="https://mfadt.rinchong.kim" target="_blank">
-      MFADT 26'
-    </a>
-    <a class="tag" href="https://www.newschool.edu/parsons/" target="_blank">
-      Parsons
-    </a>
-  </div>
+    <div class="container">
+      <a class="tag" id="name-tag" href="https://rinchong.kim" target="_blank">
+        Rin Kim →
+      </a>
+      <a class="tag" href="https://mfadt.rinchong.kim" target="_blank">
+        MFADT 26'
+      </a>
+      <a class="tag" href="https://www.newschool.edu/parsons/" target="_blank">
+        Parsons
+      </a>
+    </div>
 
-  <div class="container" id="alert">
-    <span style="line-height: 1.4em;">
-      Some projects may crash on mobile devices. Please use your PC browser for the best experience. 🔗 <span style="text-decoration: underline;">cc.rinchong.kim</span>
-    </span>
-    <div id="details">
-      <span id="details-button">Details</span>
-      <div id="details-content">
-        <span>3. Experimental Clock | 4. Exquisite Corpse</span>
-        <span>Above two projects cause crashes on mobile browsers due to limitations of p5.js on mobile.</span>
+    <div class="container" id="alert">
+      <span style="line-height: 1.4em">
+        Some projects may crash on mobile devices. Please use your PC browser
+        for the best experience. 🔗
+        <span style="text-decoration: underline">cc.rinchong.kim</span>
+      </span>
+      <div id="details">
+        <span id="details-button">Details</span>
+        <div id="details-content">
+          <span>3. Experimental Clock | 4. Exquisite Corpse</span>
+          <span
+            >Above two projects cause crashes on mobile browsers due to
+            limitations of p5.js on mobile.</span
+          >
+        </div>
       </div>
     </div>
-  </div>
 
-  <button class="accordion" onclick="refreshIframe(1);">
-    <div class="assignment-container">
-      <span class="assignment-number">1</span>
-      <span class="assignment-title">Lost and Found</span>
+    <button class="accordion" onclick="refreshIframe(1);">
+      <div class="assignment-container">
+        <span class="assignment-number">1</span>
+        <span class="assignment-title">Lost and Found</span>
+      </div>
+      <span class="special-character">&#xE15C;</span>
+    </button>
+    <div class="panel">
+      <div class="sketch-container" id="sketch-1">
+        <iframe scrolling="no"></iframe>
+      </div>
+      <div class="panel-text">
+        <span class="work-date">13 Sep, 2024</span>
+        <span class="work-title">Amy's Umbrella</span>
+        <span class="description"
+          >I paired up with Amy to draw an object that we've each lost in the
+          past. Amy lost her umbrella before she moved to New York. This was my
+          very first project using p5.js, and since I had a little experience
+          using html/css/js, I wanted to give myself a little bit of challenge
+          by using 3D primitives. It was a bit more challenging than I expected,
+          but I'm glad I was able to make it work in some scale.</span
+        >
+        <a href="../lost-and-found/index.html" target="_blank" class="see-more"
+          >See original →</a
+        >
+      </div>
     </div>
-    <span class="special-character">&#xE15C;</span>
-  </button>
-  <div class="panel">
-    <div class="sketch-container" id="sketch-1">
-      <iframe scrolling="no"></iframe>
+    <button class="accordion" onclick="refreshIframe(2);">
+      <div class="assignment-container">
+        <span class="assignment-number">2</span>
+        <span class="assignment-title">Face Generator</span>
+      </div>
+      <span class="special-character">&#xE15C;</span>
+    </button>
+    <div class="panel">
+      <div class="sketch-container" id="sketch-2">
+        <iframe scrolling="no"></iframe>
+      </div>
+      <div class="panel-text">
+        <span class="work-date">20 Sep, 2024</span>
+        <span class="work-title">Personal Space</span>
+        <span class="description"
+          >I got an idea from Tsing's Physical Computing assignment, where she
+          plugged in a ultrasonic sensor on an arduino to make a motor go crazy
+          when someone got really close to it. I tried to make a p5.js version
+          of it, where if you get too close to the face, it starts to turn red,
+          shake and make an alert sound.</span
+        >
+        <a href="../face-generator/index.html" target="_blank" class="see-more"
+          >See original →</a
+        >
+      </div>
     </div>
-    <div class="panel-text">
-      <span class="work-date">13 Sep, 2024</span>
-      <span class="work-title">Amy's Umbrella</span>
-      <span class="description">I paired up with Amy to draw an object that we've each lost in the past. Amy lost her umbrella before she moved to New York. This was my very first project using p5.js, and since I had a little experience using html/css/js, I wanted to give myself a little bit of challenge by using 3D primitives. It was a bit more challenging than I expected, but I'm glad I was able to make it work in some scale.</span>
-      <a href="../lost-and-found/index.html" target="_blank" class="see-more">See original →</a>
+    <button class="accordion" onclick="refreshIframe(3);">
+      <div class="assignment-container">
+        <span class="assignment-number">3</span>
+        <span class="assignment-title">Experimental Clock</span>
+      </div>
+      <span class="special-character">&#xE15C;</span>
+    </button>
+    <div class="panel">
+      <div class="sketch-container" id="sketch-3">
+        <iframe scrolling="no"></iframe>
+      </div>
+      <div class="panel-text">
+        <span class="work-date">27 Sep, 2024</span>
+        <span class="work-title">Time in Alcohol Bottles</span>
+        <span class="description"
+          >I don't know why thought of this, but I guess it was because I really
+          wanted to drink beer with soju at the time of the ideation process. By
+          the way, soju is usually $1 ~ $1.5 per bottle at a Korean convenience
+          store. The time on the first third indicates the real time, second
+          third is how many bottles of beer are drank and the third is how many
+          bottles of soju are drank. To be honest, I can't drink that much, but
+          this is usually how much three of my friends and I drink
+          together.</span
+        >
+        <a
+          href="../experimental-clock/index.html"
+          target="_blank"
+          class="see-more"
+          >See original →</a
+        >
+      </div>
     </div>
-  </div>
-  <button class="accordion" onclick="refreshIframe(2);">
-    <div class="assignment-container">
-      <span class="assignment-number">2</span>
-      <span class="assignment-title">Face Generator</span>
+    <button class="accordion" onclick="refreshIframe(4);">
+      <div class="assignment-container">
+        <span class="assignment-number">4</span>
+        <span class="assignment-title">Exquisite Corpse</span>
+      </div>
+      <span class="special-character">&#xE15C;</span>
+    </button>
+    <div class="panel">
+      <div class="sketch-container" id="sketch-4">
+        <iframe scrolling="no"></iframe>
+      </div>
+      <div class="panel-text">
+        <span class="work-date">4 Oct, 2024</span>
+        <span class="work-title">The New School Penguin</span>
+        <span class="description"
+          >I received 2 sketches from classmates and had to mix it with my own.
+          Yuaning drew a penguin figure, I drew a lego wearing the New School
+          sweatshirt, and Rex drew a character in bitmap style. For my exquisite
+          corpse, I used the head from Yuaning's sketch, body from my lego
+          sketch, and legs from Rex's. In order to make it more interactive, I
+          tried using 3D primitives again. It wasn't easy using default p5.js
+          functions, but I'm glad I was able to make it work.</span
+        >
+        <a
+          href="../exquisite-corpse/index.html"
+          target="_blank"
+          class="see-more"
+          >See original →</a
+        >
+      </div>
     </div>
-    <span class="special-character">&#xE15C;</span>
-  </button>
-  <div class="panel">
-    <div class="sketch-container" id="sketch-2">
-      <iframe scrolling="no"></iframe>
+    <button class="accordion" onclick="refreshIframe(5);">
+      <div class="assignment-container">
+        <span class="assignment-number">5</span>
+        <span class="assignment-title">Optical Illusion</span>
+      </div>
+      <span class="special-character">&#xE15C;</span>
+    </button>
+    <div class="panel">
+      <div class="sketch-container" id="sketch-5">
+        <iframe scrolling="no"></iframe>
+      </div>
+      <div class="panel-text">
+        <span class="work-date">11 Oct, 2024</span>
+        <span class="work-title">Optical Illusion</span>
+        <span class="description"
+          >We were asked to make an optical illusion using p5.js. I made two
+          layers of patterns that only moves diagonally, but the inner pattern
+          seems to be moving when the direction changes. I made it draggable so
+          that the effect would be more visible. Try dragging the pattern!</span
+        >
+        <a
+          href="../optical-illusion/index.html"
+          target="_blank"
+          class="see-more"
+          >See original →</a
+        >
+      </div>
     </div>
-    <div class="panel-text">
-      <span class="work-date">20 Sep, 2024</span>
-      <span class="work-title">Personal Space</span>
-      <span class="description">I got an idea from Tsing's Physical Computing assignment, where she plugged in a ultrasonic sensor on an arduino to make a motor go crazy when someone got really close to it. I tried to make a p5.js version of it, where if you get too close to the face, it starts to turn red, shake and make an alert sound.</span>
-      <a href="../face-generator/index.html" target="_blank" class="see-more">See original →</a>
+    <button class="accordion" onclick="refreshIframe(6);">
+      <div class="assignment-container">
+        <span class="assignment-number">6</span>
+        <span class="assignment-title">Data Portrait</span>
+      </div>
+      <span class="special-character">&#xE15C;</span>
+    </button>
+    <div class="panel">
+      <div class="sketch-container" id="sketch-6">
+        <iframe scrolling="no"></iframe>
+      </div>
+      <div class="panel-text">
+        <span class="work-date">18 Oct, 2024</span>
+        <span class="work-title">Data Encryption</span>
+        <span class="description"
+          >This is a visualization of my screen time, intentionally encrypted so
+          that it could hide my personal data. The class was asked to gather
+          data for 7 days, and after talking with Amy, I found out that I use a
+          lot of time on my devices compared to others. I thought it would be
+          interesting to visualize this, but in a way that is encrypted so
+          nobody knows exactly how much time I spend on each category of
+          apps.</span
+        >
+        <a href="../data-portrait/index.html" target="_blank" class="see-more"
+          >See original →</a
+        >
+      </div>
     </div>
-  </div>
-  <button class="accordion" onclick="refreshIframe(3);">
-    <div class="assignment-container">
-      <span class="assignment-number">3</span>
-      <span class="assignment-title">Experimental Clock</span>
+    <button class="accordion" onclick="refreshIframe(7);">
+      <div class="assignment-container">
+        <span class="assignment-number">7</span>
+        <span class="assignment-title">Autobiographical Game</span>
+      </div>
+      <span class="special-character">&#xE15C;</span>
+    </button>
+    <div class="panel">
+      <div class="sketch-container" id="sketch-7">
+        <iframe scrolling="no"></iframe>
+      </div>
+      <div class="panel-text">
+        <span class="work-date">15 Nov, 2024</span>
+        <span class="work-title">Adventure of Rin</span>
+        <span class="description"
+          >Adventure of Rin is a multi-stage mini game collection. I lived
+          abroad in many countries in the past, and I wanted to make a game of
+          things that I wanted or want to avoid in each country. I was also able
+          to make it arduino joystick compatible. If you have a joystick with a
+          button, you can try connecting by pressing 'c' when the game is
+          loaded. (Only on desktop Chromimum browser)</span
+        >
+        <a
+          href="../autobiographical-game/index.html"
+          target="_blank"
+          class="see-more"
+          >See original →</a
+        >
+      </div>
     </div>
-    <span class="special-character">&#xE15C;</span>
-  </button>
-  <div class="panel">
-    <div class="sketch-container" id="sketch-3">
-      <iframe scrolling="no"></iframe>
-    </div>
-    <div class="panel-text">
-      <span class="work-date">27 Sep, 2024</span>
-      <span class="work-title">Time in Alcohol Bottles</span>
-      <span class="description">I don't know why thought of this, but I guess it was because I really wanted to drink beer with soju at the time of the ideation process. By the way, soju is usually $1 ~ $1.5 per bottle at a Korean convenience store. The time on the first third indicates the real time, second third is how many bottles of beer are drank and the third is how many bottles of soju are drank. To be honest, I can't drink that much, but this is usually how much three of my friends and I drink together.</span>
-      <a href="../experimental-clock/index.html" target="_blank" class="see-more">See original →</a>
-    </div>
-  </div>
-  <button class="accordion" onclick="refreshIframe(4);">
-    <div class="assignment-container">
-      <span class="assignment-number">4</span>
-      <span class="assignment-title">Exquisite Corpse</span>
-    </div>
-    <span class="special-character">&#xE15C;</span>
-  </button>
-  <div class="panel">
-    <div class="sketch-container" id="sketch-4">
-      <iframe scrolling="no"></iframe>
-    </div>
-    <div class="panel-text">
-      <span class="work-date">4 Oct, 2024</span>
-      <span class="work-title">The New School Penguin</span>
-      <span class="description">I received 2 sketches from classmates and had to mix it with my own. Yuaning drew a penguin figure, I drew a lego wearing the New School sweatshirt, and Rex drew a character in bitmap style. For my exquisite corpse, I used the head from Yuaning's sketch, body from my lego sketch, and legs from Rex's. In order to make it more interactive, I tried using 3D primitives again. It wasn't easy using default p5.js functions, but I'm glad I was able to make it work.</span>
-      <a href="../exquisite-corpse/index.html" target="_blank" class="see-more">See original →</a>
-    </div>
-  </div>
-  <button class="accordion" onclick="refreshIframe(5);">
-    <div class="assignment-container">
-      <span class="assignment-number">5</span>
-      <span class="assignment-title">Optical Illusion</span>
-    </div>
-    <span class="special-character">&#xE15C;</span>
-  </button>
-  <div class="panel">
-    <div class="sketch-container" id="sketch-5">
-      <iframe scrolling="no"></iframe>
-    </div>
-    <div class="panel-text">
-      <span class="work-date">11 Oct, 2024</span>
-      <span class="work-title">Optical Illusion</span>
-      <span class="description">We were asked to make an optical illusion using p5.js. I made two layers of patterns that only moves diagonally, but the inner pattern seems to be moving when the direction changes. I made it draggable so that the effect would be more visible. Try dragging the pattern!</span>
-      <a href="../optical-illusion/index.html" target="_blank" class="see-more">See original →</a>
-    </div>
-  </div>
-  <button class="accordion" onclick="refreshIframe(6);">
-    <div class="assignment-container">
-      <span class="assignment-number">6</span>
-      <span class="assignment-title">Data Portrait</span>
-    </div>
-    <span class="special-character">&#xE15C;</span>
-  </button>
-  <div class="panel">
-    <div class="sketch-container" id="sketch-6">
-      <iframe scrolling="no"></iframe>
-    </div>
-    <div class="panel-text">
-      <span class="work-date">18 Oct, 2024</span>
-      <span class="work-title">Data Encryption</span>
-      <span class="description">This is a visualization of my screen time, intentionally encrypted so that it could hide my personal data. The class was asked to gather data for 7 days, and after talking with Amy, I found out that I use a lot of time on my devices compared to others. I thought it would be interesting to visualize this, but in a way that is encrypted so nobody knows exactly how much time I spend on each category of apps.</span>
-      <a href="../data-portrait/index.html" target="_blank" class="see-more">See original →</a>
-    </div>
-  </div>
-  <button class="accordion" onclick="refreshIframe(7);">
-    <div class="assignment-container">
-      <span class="assignment-number">7</span>
-      <span class="assignment-title">Autobiographical Game</span>
-    </div>
-    <span class="special-character">&#xE15C;</span>
-  </button>
-  <div class="panel">
-    <div class="sketch-container" id="sketch-7">
-      <iframe scrolling="no"></iframe>
-    </div>
-    <div class="panel-text">
-      <span class="work-date">15 Nov, 2024</span>
-      <span class="work-title">Adventure of Rin</span>
-      <span class="description">Adventure of Rin is a multi-stage mini game collection. I lived abroad in many countries in the past, and I wanted to make a game of things that I wanted or want to avoid in each country. I was also able to make it arduino joystick compatible. If you have a joystick with a button, you can try connecting by pressing 'c' when the game is loaded. (Only on desktop Chromimum browser)</span>
-      <a href="../autobiographical-game/index.html" target="_blank" class="see-more">See original →</a>
-    </div>
-  </div>
 
-  <script src="scripts/script.js"></script>
-</body>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>

@@ -1,7 +1,7 @@
 /* Root and Font Definitions */
 :root {
-  font-family: 'InterVariable', sans-serif;
-  font-feature-settings: 'liga' 1, 'calt' 1;
+  font-family: "InterVariable", sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1;
   --bg-color: #ffffff;
   --text-main: #181818;
   --point-color: #ff8800;
@@ -9,15 +9,17 @@
 }
 
 @font-face {
-  font-family: 'InterVariable';
-  src: url('/archive/assets/fonts/InterVariable.woff2') format('woff2');
+  font-family: "InterVariable";
+  src: url("/archive/assets/fonts/InterVariable.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @supports (font-variation-settings: normal) {
-  :root { font-family: InterVariable, sans-serif; }
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
 }
 
 /* Base Styles */
@@ -59,7 +61,7 @@ p {
   z-index: 100;
 }
 
-.modal .title-area{
+.modal .title-area {
   z-index: 200;
 }
 
@@ -165,8 +167,8 @@ p {
 
 /* Special Character Styles */
 .special-character {
-  font-feature-settings: 'ss06' on;
-  font-family: 'InterVariable';
+  font-feature-settings: "ss06" on;
+  font-family: "InterVariable";
   font-display: swap;
   display: inline-block;
   transition: transform 200ms ease-in;
@@ -300,11 +302,11 @@ p {
   .title-area {
     font-size: 2rem;
   }
-  
+
   .accordion {
     font-size: 1rem;
   }
-  
+
   .panel {
     flex-direction: column;
   }
