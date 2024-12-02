@@ -89,8 +89,14 @@ let previousWidth = window.innerWidth;
 let previousHeight = window.innerHeight;
 let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
+// Add a debounce timer variable
+let resizeTimer;
+
+// Replace the existing resize event listener
 window.addEventListener('resize', function() {
-    // First check if dimensions actually changed
+    // Clear any existing timer
+    clearTimeout(resizeTimer);
+    
     const currentWidth = window.innerWidth;
     const currentHeight = window.innerHeight;
     
@@ -99,38 +105,38 @@ window.addEventListener('resize', function() {
         return;
     }
     
-    if (currentWidth !== previousWidth || currentHeight !== previousHeight) {
-        // Check if size changed significantly (more than 25px to avoid minor changes)
-        if (Math.abs(previousWidth - currentWidth) > 25 || 
-            Math.abs(previousHeight - currentHeight) > 25) {
+    // Wait for resize to finish before reloading
+    resizeTimer = setTimeout(() => {
+        // Only reload if the size changed significantly
+        if (Math.abs(previousWidth - currentWidth) > 50 || 
+            Math.abs(previousHeight - currentHeight) > 50) {
             
-            // Find currently active accordion
             const activeAccordion = document.querySelector('.accordion.active');
             if (activeAccordion) {
                 const currentIndex = Array.from(acc).indexOf(activeAccordion);
                 const panel = activeAccordion.nextElementSibling;
                 const iframe = panel.querySelector('iframe');
                 
-                // Reload the iframe if it exists
-                if (iframe) {
+                // Only reload if iframe exists and source is set
+                if (iframe && iframe.src) {
                     iframe.src = iframeSources[currentIndex];
                 }
             }
 
-            // Also reload the modal iframe if modal is visible
+            // Only reload modal iframe if modal is visible
             const modal = document.getElementById('info-modal');
             if (modal.style.display === 'flex') {
                 const archiveGameIframe = document.querySelector('.archive-game iframe');
-                if (archiveGameIframe) {
+                if (archiveGameIframe && archiveGameIframe.src) {
                     archiveGameIframe.src = '../archive-game/index.html';
                 }
             }
+            
+            // Update previous dimensions
+            previousWidth = currentWidth;
+            previousHeight = currentHeight;
         }
-        
-        // Update previous dimensions
-        previousWidth = currentWidth;
-        previousHeight = currentHeight;
-    }
+    }, 250); // Wait 250ms after resize ends before reloading
 });
 
 // Add this function to set proper iframe attributes
