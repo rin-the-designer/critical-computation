@@ -115,6 +115,15 @@ window.addEventListener('resize', function() {
                     iframe.src = iframeSources[currentIndex];
                 }
             }
+
+            // Also reload the modal iframe if modal is visible
+            const modal = document.getElementById('info-modal');
+            if (modal.style.display === 'flex') {
+                const archiveGameIframe = document.querySelector('.archive-game iframe');
+                if (archiveGameIframe) {
+                    archiveGameIframe.src = '../archive-game/index.html';
+                }
+            }
         }
         
         // Update previous dimensions

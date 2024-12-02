@@ -104,7 +104,6 @@ function displayGameOverZA() {
   textSize(18);
   textFont(fontRegular);
   text("'R' to Restart\n'M' to Menu", width / 2, height / 2 + 32);
-  console.log('ZA score: ', scoreZA);
 }
 
 function displayVictoryZA() {
