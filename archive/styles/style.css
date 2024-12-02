@@ -280,11 +280,19 @@ p {
   height: 600px;
   width: 100%;
   background-color: var(--canvas-color);
+  touch-action: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .archive-game iframe {
   border: none;
   overflow: hidden;
+  touch-action: auto;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 /* Media Queries */
@@ -341,6 +349,14 @@ p {
 
   .modal {
     overflow-y: auto;
+  }
+
+  .sketch-container {
+    height: 100vw;
+  }
+
+  .sketch-container iframe {
+    height: 100vw;
   }
 }
 
