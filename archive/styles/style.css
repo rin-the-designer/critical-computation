@@ -56,6 +56,11 @@ p {
   justify-content: space-between;
   flex-wrap: nowrap !important;
   background-color: var(--bg-color);
+  z-index: 100;
+}
+
+.modal .title-area{
+  z-index: 200;
 }
 
 /* Tag Components */
@@ -173,7 +178,7 @@ p {
 
 /* Modal Components */
 .modal {
-  z-index: 1000;
+  z-index: 200;
   background-color: var(--bg-color);
   display: none;
   position: fixed;
