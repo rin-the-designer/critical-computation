@@ -44,6 +44,7 @@ for (let i = 0; i < acc.length; i++) {
       // Inject the corresponding iframe source
       const iframe = panel.querySelector('iframe');
       if (iframe) {
+        setupIframeForMobile(iframe);
         iframe.src = iframeSources[currentIndex];
       }
     }
@@ -131,3 +132,14 @@ window.addEventListener('resize', function() {
         previousHeight = currentHeight;
     }
 });
+
+// Add this function to set proper iframe attributes
+function setupIframeForMobile(iframe) {
+    if (iframe) {
+        // Enable touch interactions while preventing scrolling
+        iframe.style.pointerEvents = 'auto';
+        iframe.style.overflow = 'hidden';
+        // Prevent any iOS bounce effects
+        iframe.style.overscrollBehavior = 'none';
+    }
+}
