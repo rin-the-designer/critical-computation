@@ -186,7 +186,7 @@ class playerZA {
     if (keyIsDown(DOWN_ARROW) && this.y < height - this.h) {
       this.y += this.speed;
     }
-    if (port.opened()) {
+    if (isArduinoCompatible() && port.opened()) {
       if (mapJoystickX !== 0) {
         this.x += mapJoystickX;
       }

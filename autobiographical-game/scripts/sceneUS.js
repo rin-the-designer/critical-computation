@@ -76,7 +76,7 @@ function sceneUS() {
       }
     }
     
-    if (sceneNum === 50 && port.opened()) {
+    if (sceneNum === 50 && isArduinoCompatible() && port.opened()) {
       if (mapJoystickY < 0) {
         drawPlayerUS.jump();
       }

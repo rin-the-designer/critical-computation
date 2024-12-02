@@ -224,7 +224,7 @@ class playerKR {
         this.x += 10;
       }
     }
-    if (port.opened()) {
+    if (isArduinoCompatible() && port.opened()) {
       if (mapJoystickX !== 0) {
         this.x += mapJoystickX;
       }

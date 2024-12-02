@@ -4,13 +4,6 @@ function keyPressed() {
     connectBtnClick();
   }
 
-  if (key === 'm' || key === 'M'){
-    sceneNum = 0;
-    resetGameUK();
-    resetGameZA();
-    resetGameKR();
-    resetGameUS();
-  }
   if (sceneNum === 0) {
     if (key === 'Enter') {
       if (showIntro) {
@@ -31,13 +24,17 @@ function keyPressed() {
         }
       }
     }
-    if (key === 'r' || key === 'R') {
+    if (key === 'f' || key === 'F') {
       finishedGame = true;
       showOutro = true;
     }
   }
 
   if (sceneNum === 10){
+    if (key === 'm' || key === 'M') {
+      sceneNum = 0;
+      resetGameUK();
+    }
     if (gameOverUK && (key === 'r' || key === 'R')) {
       resetGameUK();
     }
@@ -62,6 +59,10 @@ function keyPressed() {
   }
 
   if (sceneNum === 20){
+    if (key === 'm' || key === 'M') {
+      sceneNum = 0;
+      resetGameZA();
+    }
     if (gameOverZA && (key === 'r' || key === 'R')) {
       resetGameZA();
     }
@@ -86,6 +87,10 @@ function keyPressed() {
   }
 
   if (sceneNum === 30){
+    if (key === 'm' || key === 'M') {
+      sceneNum = 0;
+      resetGameKR();
+    }
     if (gameOverKR && (key === 'r' || key === 'R')) {
       resetGameKR();
     }
@@ -113,6 +118,10 @@ function keyPressed() {
   }
 
   if (sceneNum === 50){
+    if (key === 'm' || key === 'M') {
+      sceneNum = 0;
+      resetGameUS();
+    }
     if (keyCode === UP_ARROW && drawPlayerUS.onGround()) {
       drawPlayerUS.jump();
     }
@@ -167,19 +176,19 @@ function keyReleased() {
 //Mouse
 function mouseClicked() {
   if (sceneNum === 0 && !showIntro && !showOutro && mouseY > height * 2 / 3 && mouseY < height * 7 / 8) {
-    if (mouseX > width/10*0 && mouseX < width/10*2){
+    if (mouseX > width/8*0 && mouseX < width/8*2){
       sceneNum = 10;
     }
-    if (mouseX > width/10*2 && mouseX < width/10*4){
+    if (mouseX > width/8*2 && mouseX < width/8*4){
       sceneNum = 20;
     }
-    if (mouseX > width/10*4 && mouseX < width/10*6){
+    if (mouseX > width/8*4 && mouseX < width/8*6){
       sceneNum = 30;
     }
     // if (mouseX > width/10*6 && mouseX < width/10*8){
     //   sceneNum = 40;
     // }
-    if (mouseX > width/10*8 && mouseX < width/10*10){
+    if (mouseX > width/8*6 && mouseX < width/8*8){
       sceneNum = 50;
     }
   }

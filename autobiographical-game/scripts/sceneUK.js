@@ -198,7 +198,7 @@ class playerUK {
     if (keyIsDown(RIGHT_ARROW) && this.x < width - this.w) {
       this.x += 5;
     }
-    if (port.opened()) {
+    if (isArduinoCompatible() && port.opened()) {
       if (mapJoystickX !== 0) {
         this.x += mapJoystickX;
       }
