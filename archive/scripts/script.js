@@ -192,3 +192,9 @@ function showAlertMobile() {
 }
 
 document.addEventListener('DOMContentLoaded', showAlertMobile);
+
+// Google tag (gtag.js)
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-1SJR2XGQGM');
