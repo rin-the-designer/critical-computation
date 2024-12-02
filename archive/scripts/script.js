@@ -1,6 +1,4 @@
 var acc = document.getElementsByClassName("accordion");
-
-// Array of iframe sources
 const iframeSources = [
   '../lost-and-found/index.html',
   '../face-generator/index.html',
@@ -52,7 +50,6 @@ for (let i = 0; i < acc.length; i++) {
   });
 }
 
-// Add this to your existing script file
 const modal = document.getElementById('info-modal');
 const infoIcon = document.getElementById('info-icon');
 const closeBtn = document.querySelector('.close-modal');
@@ -60,16 +57,21 @@ const closeBtn = document.querySelector('.close-modal');
 infoIcon.onclick = function() {
   modal.style.display = 'flex';
   modal.style.flexDirection = 'column';
+  
+  // Inject the iframe source when opening the modal
+  const archiveGameIframe = document.querySelector('.archive-game iframe');
+  if (archiveGameIframe && !archiveGameIframe.src) {
+    archiveGameIframe.src = '../archive-game/index.html';
+  }
 }
 
 closeBtn.onclick = function() {
   modal.style.display = 'none';
-}
-
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-  if (event.target === modal) {
-    modal.style.display = 'none';
+  
+  // Optionally, remove the iframe source when closing
+  const archiveGameIframe = document.querySelector('.archive-game iframe');
+  if (archiveGameIframe) {
+    archiveGameIframe.removeAttribute('src');
   }
 }
 
@@ -92,8 +94,8 @@ window.addEventListener('resize', function() {
     
     if (currentWidth !== previousWidth || currentHeight !== previousHeight) {
         // Check if size changed significantly (more than 50px to avoid minor changes)
-        if (Math.abs(previousWidth - currentWidth) > 50 || 
-            Math.abs(previousHeight - currentHeight) > 50) {
+        if (Math.abs(previousWidth - currentWidth) > 25 || 
+            Math.abs(previousHeight - currentHeight) > 25) {
             
             // Find currently active accordion
             const activeAccordion = document.querySelector('.accordion.active');
