@@ -16,7 +16,7 @@ function setup() {
   rock = {
     x: 0,
     y: windowHeight,
-    radius: windowHeight / 5,
+    radius: windowHeight / 10,
     velocity: 0,
     color: color(255, 136, 0),
   };
@@ -88,7 +88,7 @@ function draw() {
     cursor("default");
   }
 
-  // mouse interaction
+  // mouse control
   if (mouseIsPressed && dist(mouseX, mouseY, rock.x, rock.y) < rock.radius) {
     rock.x = mouseX;
     rock.y = targetY;
@@ -110,13 +110,15 @@ function draw() {
     }
   }
 
+  // hand control
   if (hands.length > 0) {
+    cursor("none");
     let hand = hands[0];
     let handTop = hand.middle_finger_tip;
     let handBottom = hand.wrist;
     let handCenterX = (handTop.x + handBottom.x) / 2;
     let handCenterY = (handTop.y + handBottom.y) / 2;
-    fill(255, 0, 0);
+    fill(0);
     circle(handCenterX, handCenterY, 20);
 
     if (dist(handCenterX, handCenterY, rock.x, rock.y) < rock.radius) {
@@ -124,7 +126,6 @@ function draw() {
       rock.y = targetY;
       rock.velocity = 0;
     } else {
-      // roll down the slope
       if (
         (direction === 1 && rock.x > 0) ||
         (direction === -1 && rock.x < windowWidth)
