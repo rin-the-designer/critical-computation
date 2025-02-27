@@ -19,8 +19,8 @@ body {
 }
 
 #info-icon.active {
-  background-color: white;
-  border-bottom: 4px solid #000;
+  background-color: #000;
+  border-bottom: 4px solid #fff;
 }
 
 .info {
@@ -36,10 +36,9 @@ body {
 #info-container {
   display: none;
   flex-direction: column;
-  background-color: #fff;
-  height: 100vh;
-  box-sizing: border-box;
+  background-color: #000;
   position: fixed;
+  height: 100vh;
   top: 0;
   left: 0;
   z-index: 999;
@@ -47,7 +46,8 @@ body {
   font-family: "Inter", sans-serif;
   font-size: 2rem;
   line-height: 1.4em;
-  overflow-y: auto;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -57,21 +57,19 @@ body {
 }
 
 #info-container p {
+  color: #fff;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.rock {
-  color: #ff8800;
-}
-
 #info-container a {
-  color: #000;
+  color: #fff;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 #info-container ol {
+  color: #fff;
   margin-top: 0;
 }
 

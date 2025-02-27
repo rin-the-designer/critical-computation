@@ -52,10 +52,10 @@ function updateHillConfiguration() {
 }
 
 function draw() {
-  background(0);
+  background(255);
 
   // draw hill
-  fill(255);
+  fill(0);
   triangle(hill.x1, hill.y1, hill.x2, hill.y2, hill.x3, hill.y3);
 
   // draw rock
@@ -118,7 +118,7 @@ function draw() {
     let handBottom = hand.wrist;
     let handCenterX = (handTop.x + handBottom.x) / 2;
     let handCenterY = (handTop.y + handBottom.y) / 2;
-    fill(51);
+    fill(0);
     circle(handCenterX, handCenterY, 20);
 
     if (dist(handCenterX, handCenterY, rock.x, rock.y) < rock.radius) {
