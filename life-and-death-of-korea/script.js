@@ -13,13 +13,3 @@ infoButton.onclick = () => {
     infoIcon.classList.remove("active");
   }
 };
-
-document.getElementById("requestCamera").addEventListener("click", async () => {
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-    // Handle the stream (you might want to call your existing video setup function here)
-    console.log("Camera access granted");
-  } catch (err) {
-    console.error("Error accessing camera:", err);
-  }
-});

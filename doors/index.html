@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <main>
+      <audio id="background-music" loop>
+        <source src="loops.mp3" type="audio/mpeg" />
+      </audio>
+      <div id="info-icon">
+        <span class="info">ⓘ</span>
+      </div>
+      <div id="info-container">
+        <p>
+          Every time we step through a door, we transform into a different
+          character. Doors are also metaphorically used as entrances to heaven
+          and hell. Auguste Rodin’s “Porte de l’Enfer” is a well-known
+          representation of the gates of hell.
+        </p>
+        <p>
+          This visualization explores the endless cycle of doors we encounter
+          throughout our lives and beyond. As we move through space, we
+          continuously enter and exit different phases of existence—each doorway
+          transforming who we are. Just as an infinite stairway progresses
+          through these transitions, we progress from child to adult, student to
+          professional, and so on—roles that shape our identity with each
+          passage.
+        </p>
+        <p>
+          The alternating black and white scenes represent the duality of
+          existence—life and death, light and dark, beginning and end. Yet, the
+          loop never truly ends; it transforms into new beginnings. Through this
+          endless corridor of doors, we witness how each transition shapes us,
+          changes us, and leads us to our next transformation. The journey
+          continues infinitely, reminding us that every end is simply another
+          beginning.
+        </p>
+      </div>
+
+      <div id="start-modal" class="modal">
+        <h2>Doors</h2>
+        <p>Click enter to begin the experience with sound</p>
+        <button id="enter-button">Enter</button>
+      </div>
+    </main>
+    <script src="sketch.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

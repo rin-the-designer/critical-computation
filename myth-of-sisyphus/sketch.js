@@ -118,7 +118,7 @@ function draw() {
     let handBottom = hand.wrist;
     let handCenterX = (handTop.x + handBottom.x) / 2;
     let handCenterY = (handTop.y + handBottom.y) / 2;
-    fill(155);
+    fill(51);
     circle(handCenterX, handCenterY, 20);
 
     if (dist(handCenterX, handCenterY, rock.x, rock.y) < rock.radius) {

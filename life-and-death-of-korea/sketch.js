@@ -32,11 +32,13 @@ function draw() {
   const centerX = windowWidth / 2;
   const centerY = windowHeight / 2;
 
-  // update progress bar - modified to use currentIndex directly
-  let progressX = map(
-    currentIndex,
+  // update progress bar
+  let totalDuration = updateInterval * deathBirthData.length;
+  let elapsedTime = millis() - startTime;
+  progressX = map(
+    elapsedTime % totalDuration,
     0,
-    deathBirthData.length - 1,
+    totalDuration,
     0,
     windowWidth
   );
